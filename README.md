@@ -33,7 +33,7 @@ To run all available tests, in the project directory, run **bin/rails test**,  *
 * Ruby - 3.1.2
 * Rails - 7.0.4
 * RVM - 1.29.12
-* Sqlite3 - built in.
+* Postgres 15
 * Heroku
 To see the next steps I'd take with this project, including technology-wise, read further. This is dead-simple for now.
 
