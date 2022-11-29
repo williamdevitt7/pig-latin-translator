@@ -27,13 +27,13 @@ class Translation < ApplicationRecord
   private
 
     def translate word
-      uppercases = get_uppercase_indexes(word)
+      uppercases = get_uppercase_indicies(word)
       punctuation = get_punctuation(word)
       word.gsub!(PUNCTUATION_REGEX, '')
       word.downcase!
       if vowel?(word.first)
         word = capitalize(uppercases, word)  
-        suffix = uppercase?(word.last) ? "WAY" : "way" # assume if the last letter is capitalized, the suffix should be too
+        suffix = uppercase?(word.last) ? "WAY" : "way"
       else 
         word.gsub!("qu", " ") # handle the strange qu vowel sound edge case by removing and adding it on the end.
         word.gsub!(PIG_LATIN_REGEX,'\2\1')
@@ -44,8 +44,7 @@ class Translation < ApplicationRecord
       return word + suffix + punctuation
     end
 
-    # get locations of capitalized letters... currently an imperfect solution.
-    def get_uppercase_indexes word
+    def get_uppercase_indicies word
       uppercases = []
       word.each_char.with_index { |c, i| uppercases.append(i) if uppercase?(c) }
       return uppercases
@@ -56,7 +55,6 @@ class Translation < ApplicationRecord
     end
 
     def vowel? c
-      # We include Y... see README
       return ['a','e','i','o','u','y'].include?(c.downcase) && letter?(c)
     end
 
