@@ -16,4 +16,4 @@ test:
 
 production:
   <<: *default
-  database: pig_latin_dev
+  database: pig_latin_prod
