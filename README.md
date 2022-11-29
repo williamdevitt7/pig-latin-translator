@@ -1,20 +1,20 @@
-# Pig Latin Translator for a Cool Engineering Team
+# Pig Latin Translation Engine
 Hey Mike & Team - here's a simple English to Pig Latin translator for you. It handles all provided tests, and looks nice on mobile.
-My email: **will.devitt759@gmail.com**
+My email: **will.devitt759@gmail.com**.
 
 ## Installation & Running the Project
-* << PROJECT SITE LINK >>
-I've deployed the application to Heroku for your conveinence. See the link above.
+https://pig-latin-translation-engine.herokuapp.com/
+* I've deployed the application to Heroku for your conveinence. See the link above.
 
 However, if you desire to run the project on your local machine, follow these steps (assuming clean setup, no Ruby or Rails.) In your terminal...
 
 * 1: Clone the project to your local machine. Install git if neccessary. 
 * 2: Install RVM by following the instructions in this StackOverflow post. https://tinyurl.com/3c8scf7k
-* 3: Install ruby-3.0.0 using "rvm install ruby-3.0.0"
+* 3: Install ruby-3.1.2 using "rvm install ruby-3.1.2"
 * 4: Install Rails with "gem install rails"
 * 5: Run "bundle install" to install all project dependencies. 
 * 6: Check that your versions are correctly installed with "ruby -v", "rvm -v" and "rails -v".
-Please feel free to email me if you have any problems whatsoever. I've included my email at the head of this file.
+Please don't hesitate to get in touch if you have any problems whatsoever. I've included my email at the head of this file.
 
 ### Launching the Server
 From the project directory, run **bin/rails server**, **rails server** or just **rails s**.
@@ -27,13 +27,14 @@ To run all available tests, in the project directory, run **bin/rails test**,  *
 ### Assumptions & Rules
 * Vowels are A, E, I, O, U and sometimes Y. If the first letter is a Y, we consider it a vowel - as given in the example test "yellow". It is slightly more nuanced than this, but for the sake of time, this is how my code is implemented. All other rules are taken from the provided Wikipedia link, **https://en.wikipedia.org/wiki/Pig_Latin**.
 * I've also assumed some things in regards to capitalization - the implementation of which isn't perfect. I've attempted to maintain correct capitalization, e.g. "Hello" => "Ellohay", by tracking the indicies of the capital letters.
-* When determining if the suffix ("ay" or "way") should be capitalized, I considered a few approaches. I considered capitalizing the suffix if more than half of the characters in the input string were capitalized, but that seemed odd. I ended up assuming that if the last letter is capitalized, the suffix should be too - this is a simple continuation pattern that feels right - there's no set rule on this matter, I believe. Feel free to quuestion this!
+* When determining if the suffix ("ay" or "way") should be capitalized, I considered a few approaches. I considered capitalizing the suffix if more than half of the characters in the input string were capitalized, but that seemed odd. I ended up assuming that if the last letter is capitalized, the suffix should be too - this is a simple continuation pattern that feels right - there's no set rule on this matter, I believe. Feel free to question this!
 
 ### Technology & Versioning
-* Ruby - 3.0.0
+* Ruby - 3.1.2
 * Rails - 7.0.4
 * RVM - 1.29.12
 * Sqlite3 - built in.
+* Heroku
 To see the next steps I'd take with this project, including technology-wise, read further. This is dead-simple for now.
 
 ## Design and Implementation Process (for the Dev team!)
@@ -75,7 +76,7 @@ I've added a "Language" column to my Translation table. It's overkill right now,
 TODO!!!!!!!
 ### Next Steps:
 Some next steps I'd take to improve this project:
-* Implement a frontend framework, and make it beautiful.
+* Implement a frontend framework, and make it beautiful. Obviously, the plain HTML doesn't look great, but I didn't want to over-engineer this takehome.
 * Add more contstraints to database fields.
 * TODO: CHECK PHONE FOR OTHER THOUGHTS!!!
 
