@@ -1,7 +1,7 @@
 # Pig Latin Translation Engine
 Hey Mike & Team - here's a simple English to Pig Latin translator for you. It handles all provided tests. 
 My email: **will.devitt759@gmail.com**.
-* **EDIT** Use of the Heroku instance on a mobile device is NOT RECOMMENDED. I've just found a new bug where the mobile instance will incorrectly handle punctuation, while the desktop version (and system tests) handle things correctly. I've hit the deadline for this project, so I'm leaving it for future discussion. I have no idea how this is possible (yet.)
+* **EDIT**: Use of the Heroku instance on a mobile device is **NOT RECOMMENDED.** I've just found a new bug where the mobile instance will incorrectly handle punctuation, while the desktop version (and system tests) handle things correctly. I've hit the deadline for this project, so I'm leaving it for future discussion. I have no idea how this is possible (yet.)
 ## Installation & Running the Project
 https://pig-latin-translation-engine.herokuapp.com/
 * I've deployed the application to Heroku for your convienence. See the link above.
