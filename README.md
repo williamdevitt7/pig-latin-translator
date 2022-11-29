@@ -44,6 +44,7 @@ To run all available tests, in the project directory, run **bin/rails test**,  *
 To see the next steps I'd take with this project, including technology-wise, read further. This is dead-simple for now.
 
 ## Design and Implementation Process
+Feel free to take a look at my commit process.
 ### Approaches
 Here, I'll document the different possible approaches to the core problem (translating an English sentence into Pig Latin), and my reasons for choosing my eventual solution. As for why I chose Ruby and Rails - I love the language and the framework, and feel very strong in my use of both. It's one of the reasons I'm applying for this position. I considered JavaScript as well, but I consider Ruby to be cleaner and more readable - and additionally, having the core logic condensed into one class (Translation.rb) would allow one to simply grab
 ### 1: Use a Library

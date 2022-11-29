@@ -4,7 +4,7 @@
     <%= form_with model: @translation, method: :post do |f| %>
       <%= f.hidden_field :language, value: @translation.language %>
       <%= f.text_area :input, size: "30x5", placeholder: "Enter English here..." %><br>
-      <%= f.button :submit, id: "submit-btn", class: "button center" %>
+      <%= f.button :submit, id: "submit-btn", class: "center button" %>
     <% end %>
   </div>
   <div>
