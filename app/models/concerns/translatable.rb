@@ -7,7 +7,7 @@ module Translatable
   end
 
   PIG_LATIN_REGEX    = /^([^aeiou]*)(.*)/ 
-  PUNCTUATION_REGEX  = /[.!?;:><\\-]/      # add other any punctuation you wish to handle here.
+  PUNCTUATION_REGEX  = /[.…!?;:><\\-]/      # add other any punctuation you wish to handle here.
   ALPHABET_REGEX     = /[[:alpha:]]/
   UPPERCASE_REGEX    = /[[:upper:]]/
 
