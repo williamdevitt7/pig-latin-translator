@@ -90,6 +90,7 @@ And, as we generate an extra string to store the translated input, our space com
 ## Next Steps to Improve the Project
 * Implement a frontend framework, and make it beautiful. **This is the most glaring and obvious missing piece.** The plain HTML doesn't look great, but I didn't want to over-engineer this takehome and introduce dependencies. It would be the absolute first thing I implement were I to take this project further. If given more time for this project, I would have chosen React, as that would be used in this role and I'd like to demonstrate my self-teaching capabilities. This includes making the application responsive in both desktop and mobile formats.
 * Use AJAX calls and responsive Rails JavaScript controller interactions when clicking "Create Translation" to avoid reloading the entire page and reload only the relevant section of the app instead. This would help to scale and increase the functionality of the application, as reloading the entire page would quickly become an issue.
+* Add every possible UNICODE punctuation to the PUNCTUATION_REGEX. See my last few commits.
 * Add more contstraints to database fields and scale its implementation.
 * Add a dynamic text editor, with full Word-like functionality. 
 * Add user login/chat functions. Chatting with others in Pig Latin could be really fun.
