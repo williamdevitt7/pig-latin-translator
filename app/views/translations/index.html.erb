@@ -1,0 +1,21 @@
+<h1 class="center">Pig Latin Translator</h1>
+<div class="center">
+  <div>
+    <%= form_with model: @translation, method: :post do |f| %>
+      <%= f.hidden_field :language, value: @translation.language %>
+      <%= f.text_area :input, size: "30x5", placeholder: "Enter English here..." %><br>
+      <%= f.button :submit, id: "submit-btn" %>
+    <% end %>
+  </div>
+  <div>
+    <% if flash[:error] %>
+      <span class="error">Error: <%= flash[:error] %></span>
+    <% end %>
+  </div>
+  <div>
+    <h3>All Translations</h3>
+    <% @all_translations.each do |record| %>
+      <ul><%= "#{record.input} >> <strong>#{record.translation}</strong>".html_safe %></ul>
+    <% end %>
+  </div>
+</div>

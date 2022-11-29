@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
-  root "translations#new"
+  
+  root "translations#index"
 
-  get "/translations", to: "translations#new"
+  get "/translations", to: "translations#index"
+
+  resources :translations
+
 end
