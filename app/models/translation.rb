@@ -7,14 +7,14 @@ class Translation < ApplicationRecord
     words = self.input.split(" ")
     translated_str = ""
     words.each do |word|
-      translated_str += translate(word) + " "
+      translated_str += pig_latinize(word) + " "
     end
     self.translation = translated_str.strip
   end
 
   private
 
-    def translate word
+    def pig_latinize word
       uppercases = get_uppercase_indicies(word)
       punctuation = get_punctuation(word)
       word.gsub!(PUNCTUATION_REGEX, '')
@@ -27,7 +27,7 @@ class Translation < ApplicationRecord
         word.gsub!(" ", "qu") 
         suffix = "ay" 
       end
-      word = capitalize(uppercases, word)  
+      word = maintain_capitalization(uppercases, word)  
       suffix.upcase! if uppercase?(word.last) && word.length > 1
       return word + suffix + punctuation
     end
@@ -38,7 +38,7 @@ class Translation < ApplicationRecord
       return uppercases
     end
 
-    def capitalize indicies, word
+    def maintain_capitalization indicies, word
       indicies.each do |i|
         word[i] = word[i].upcase
       end
