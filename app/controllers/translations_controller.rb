@@ -5,7 +5,7 @@ class TranslationsController < ApplicationController
     @all_translations = Translation.pig_latin.ordered.first(15)
   end
 
-  def create 
+  def create
     translation = Translation.new(translation_params)
     translation.to_pig_latin 
     if !translation.save

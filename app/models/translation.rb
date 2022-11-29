@@ -1,14 +1,7 @@
 class Translation < ApplicationRecord
+  include Translatable
 
-  PIG_LATIN_REGEX    = /^([^aeiou]*)(.*)/ 
-  PUNCTUATION_REGEX  = /[.!?;:\\-]/
-  ALPHABET_REGEX     = /[[:alpha:]]/
-  UPPERCASE_REGEX    = /[[:upper:]]/
-
-  scope :ordered, -> { order(created_at: :desc) }
-  scope :pig_latin, -> { where(language: "pig_latin") }
-
-  validates :input, presence: true
+  validates :input, length: { minimum: 1, maximum: (2**31 - 1) }
 
   def to_pig_latin
     words = self.input.split(" ")
@@ -19,11 +12,6 @@ class Translation < ApplicationRecord
     self.translation = translated_str.strip
   end
 
-  # possible extensions...
-  # def to_french
-    # etc...
-  # end
-
   private
 
     def translate word
@@ -32,15 +20,15 @@ class Translation < ApplicationRecord
       word.gsub!(PUNCTUATION_REGEX, '')
       word.downcase!
       if vowel?(word.first)
-        word = capitalize(uppercases, word)  
-        suffix = uppercase?(word.last) ? "WAY" : "way"
+        suffix = "way"
       else 
         word.gsub!("qu", " ") # handle the strange qu vowel sound edge case by removing and adding it on the end.
         word.gsub!(PIG_LATIN_REGEX,'\2\1')
         word.gsub!(" ", "qu") 
-        word = capitalize(uppercases, word)
-        suffix = uppercase?(word.last) ? "AY" : "ay" 
+        suffix = "ay" 
       end
+      word = capitalize(uppercases, word)  
+      suffix.upcase! if uppercase?(word.last) && word.length > 1
       return word + suffix + punctuation
     end
 
@@ -50,24 +38,8 @@ class Translation < ApplicationRecord
       return uppercases
     end
 
-    def get_punctuation word
-      return word.scan(PUNCTUATION_REGEX).join
-    end
-
-    def vowel? c
-      return ['a','e','i','o','u','y'].include?(c.downcase) && letter?(c)
-    end
-
-    def letter? c
-      return c.match?(ALPHABET_REGEX)
-    end
-
-    def uppercase? c
-      return c.match?(UPPERCASE_REGEX)
-    end
-
-    def capitalize indexes, word
-      indexes.each do |i|
+    def capitalize indicies, word
+      indicies.each do |i|
         word[i] = word[i].upcase
       end
       return word

@@ -1,6 +1,10 @@
 .center {
   text-align: center;
+  font-family: Georgia, 'Times New Roman', Times, serif;
 }
 .error {
   color:red; 
+}
+.button {
+  width: 262px;
 }
