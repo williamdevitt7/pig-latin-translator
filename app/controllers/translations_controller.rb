@@ -7,7 +7,7 @@ class TranslationsController < ApplicationController
 
   def create
     translation = Translation.new(translation_params)
-    translation.to_pig_latin 
+    translation.to_pig_latin
     if !translation.save
       flash[:error] = "Translation not processed! Make sure to enter some input."
     end

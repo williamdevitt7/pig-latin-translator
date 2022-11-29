@@ -17,7 +17,10 @@
   <div>
     <h4><u>All Translations</u></h4>
     <% @all_translations.each do |record| %>
-      <ul><%= "#{record.input} >> <strong>#{record.translation}</strong>".html_safe %></ul>
+      <ul>
+        <%= "#{record.input} >>"%> 
+        <strong><%= record.translation %></strong>
+      </ul>
     <% end %>
   </div>
 </div>
