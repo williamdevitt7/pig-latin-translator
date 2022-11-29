@@ -1,6 +1,8 @@
-<h1 class="center">Pig Latin Translator</h1>
 <div class="center">
+  <h1 class="center">Pig Latin Translator</h1>
+  <a href="https://github.com/williamdevitt7/pig-latin-translator">GitHub</a>
   <div>
+    <br>
     <%= form_with model: @translation, method: :post do |f| %>
       <%= f.hidden_field :language, value: @translation.language %>
       <%= f.text_area :input, size: "30x5", placeholder: "Enter English here..." %><br>
