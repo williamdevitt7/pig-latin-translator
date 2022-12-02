@@ -93,6 +93,7 @@ And, as we generate an extra string to store the translated input, our space com
 * Use AJAX calls and responsive Rails JavaScript controller interactions when clicking "Create Translation" to avoid reloading the entire page and reload only the relevant section of the app instead. This would help to scale and increase the functionality of the application, as reloading the entire page would quickly become an issue.
 * Refactor the ```translation.to_pig_latin``` to ```translation.translate```, and have a switch statement or similar in the model . This is a needed step to make the translation service more extensible, allowing the controller code to be dead simple and just pass parameters. I missed this in my refactoring and am now past the deadline to submit code, so I'll mention it here for future discussion. 
 * ```get_uppercase_indicies``` and ```maintain_capitalization``` in the Translate class both use simple ```each``` loops, but in different ways - this is inconsistent and also something I missed pre-deadline. I should just pick one (and also change ```maintain_capitalization``` to ```re_capitalize```.)
+* Move uppercase logic into the else block
 * Add every possible UNICODE punctuation to the PUNCTUATION_REGEX. See my last few commits.
 * Add more contstraints to database fields and scale its implementation.
 * Add a dynamic text editor, with full Word-like functionality. 
