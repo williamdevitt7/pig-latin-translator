@@ -89,16 +89,20 @@ And, as we generate an extra string to store the translated input, our space com
 * **O(N) space.**
 
 ## Next Steps to Improve the Project
-* Implement a frontend framework, and make it beautiful. **This is the most glaring and obvious missing piece.** The plain HTML doesn't look great, but I didn't want to over-engineer this takehome and introduce dependencies. It would be the absolute first thing I implement were I to take this project further. If given more time for this project, I would have chosen React, as that would be used in this role and I'd like to demonstrate my self-teaching capabilities. This includes making the application responsive in both desktop and mobile formats.
-* Use AJAX calls and responsive Rails JavaScript controller interactions when clicking "Create Translation" to avoid reloading the entire page and reload only the relevant section of the app instead. This would help to scale and increase the functionality of the application, as reloading the entire page would quickly become an issue.
-* Refactor the ```translation.to_pig_latin``` to ```translation.translate```, and have a switch statement or similar in the model that checks against the passed language parameter. This is a needed step to make the translation service more extensible, allowing the controller code to be dead simple and just pass parameters, fufilling its one responsibility and reducing the need to change it in the future.
-* Get rid of the if/else block, add a "y" to the PIG_LATIN_REGEX capture group 1, and determine suffix with a ternary / ifelse checking if the first character is a vowel. This is definetly cleaner.
+* Use AJAX calls and responsive Rails JavaScript controller interactions when clicking "Create Translation" to avoid reloading the entire page and reload only the relevant section of the app instead. This would help to scale and increase the functionality of the application, as reloading the entire page would quickly become an issue, even though it isn't now.
+* Refactor the ```translation.to_pig_latin``` line in the controller to ```translation.translate```, and have an if block in the model that checks against the passed language parameter. This is a needed step to make the translation service more extensible, allowing the controller code to be dead simple and just pass parameters, fufilling its one responsibility and reducing the need to change it in the future.
+* Take the arrays of words and pig latin words out from the test and put them in a function, allowing the translation test to be modified in the future to take arrays of different languages - removing the need to ever change the core test.
+* Get rid of the if/else block in ```translation.rb```, add a "y" to the PIG_LATIN_REGEX capture group 1, and determine suffix with a ternary / ifelse checking if the first character is a vowel. This is definetly cleaner.
 * ```get_uppercase_indicies``` and ```maintain_capitalization``` in the Translate class both use simple ```each``` loops, but in different ways - this is inconsistent and also something I missed pre-deadline. I should just pick one (and also change ```maintain_capitalization``` to ```re_capitalize```.)
-* Move uppercase logic into the else block (if we don't remove it.) If the first letter is a vowel, we can just retain the capitalization as all we're doing is appending a suffix.
+* Move uppercase logic into the else block (if we don't remove it.) If the first letter is a vowel, we can just retain the capitalization as all we're doing is appending a suffix (and then guessing if we should capitalize the suffix or not.)
 * Modify the ```words``` array in ```to_pig_latin``` instead of creating another string, and save some memory by not creating ```translated str```.
-* Place string checking logic into some module that extends string class so I can all .uppercase? on an instance of a string
-* Add every possible UNICODE punctuation to the PUNCTUATION_REGEX. See my last few commits.
-* Add more contstraints to database fields and scale its implementation.
+* Place string checking logic (uppercase? vowel?) into some module that extends the string class so I can call .uppercase? on an instance of a string.
+* Add every possible UNICODE punctuation to the PUNCTUATION_REGEX. See my last few commits. I ran into a funny issue here.
+* Add more contstraints to database fields and scale its implementation, disallowing certain non-language inputs, if neccesary.
+* Implement a frontend framework, and make it beautiful. **This is the most glaring and obvious missing piece.** The plain HTML doesn't look great, but I didn't want to over-engineer this takehome and introduce dependencies. It would be the absolute first thing I implement were I to take this project further. If given more time for this project, I would have chosen React, as that would be used in this role and I'd like to demonstrate my self-teaching capabilities. This includes making the application responsive in both desktop and mobile formats.
+
+"Out there" solutions...
+
 * Add a dynamic text editor, with full Word-like functionality. 
 * Add user login/chat functions. Chatting with others in Pig Latin could be really fun.
 * Unknown. There are no limits to the clients' desires... and we shall deliver.
