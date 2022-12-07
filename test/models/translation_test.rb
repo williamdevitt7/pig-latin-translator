@@ -12,7 +12,7 @@ class TranslationTest < ActiveSupport::TestCase
     
     english_input.each_with_index do |english_word, i|
       t = Translation.new(language: "pig_latin", input: english_word)
-      t.to_pig_latin
+      t.translate
       assert_equal pig_latin[i], t.translation
     end
   end 

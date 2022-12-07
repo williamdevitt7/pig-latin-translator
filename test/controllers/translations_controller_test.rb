@@ -8,7 +8,7 @@ class TranslationControllerTest < ActionDispatch::IntegrationTest
 
   test "create translation" do 
     translation = Translation.new(language: "english", input: "hello world", translation: "hello world")
-    translation.to_pig_latin
+    translation.translate
     assert translation.save, "Created test translation"
   end
 

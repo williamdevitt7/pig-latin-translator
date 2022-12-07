@@ -6,7 +6,7 @@ module Translatable
     scope :pig_latin, -> { where(language: "pig_latin") }
   end
 
-  PIG_LATIN_REGEX    = /^([^aeiou]*)(.*)/ 
+  PIG_LATIN_REGEX    = /^([^aeiouy]*)(.*)/ 
   PUNCTUATION_REGEX  = /[.…!?;:><\\-]/      # add other any punctuation you wish to handle here.
   ALPHABET_REGEX     = /[[:alpha:]]/
   UPPERCASE_REGEX    = /[[:upper:]]/
@@ -16,7 +16,7 @@ module Translatable
   end
 
   def vowel? c
-    return ['a','e','i','o','u','y'].include?(c.downcase) && letter?(c)
+    return c.downcase.match?(/^[aeiouy]/) && letter?(c)
   end
 
   def letter? c
