@@ -1,5 +1,5 @@
 # Pig Latin Translation Engine
-Hey Mike & Team - here's a simple English to Pig Latin translator for you. It handles all provided tests, and works great on both desktop and mobile (although desktop is recommended.)
+\ere's a simple English to Pig Latin translator for you. It handles all provided tests, and works great on both desktop and mobile (although desktop is recommended.) I found many online just didn't work great, so I wrote this.
 My email: **will.devitt759@gmail.com**.
 ## Installation & Running the Project
 https://pig-latin-translation-engine.herokuapp.com/
