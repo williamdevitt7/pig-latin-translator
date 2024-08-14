@@ -2,10 +2,7 @@
 Here's a simple English to Pig Latin translator for you. It handles all provided tests, and works great on both desktop and mobile (although desktop is recommended.) I found many online just didn't work great, so I wrote this.
 My email: **will.devitt759@gmail.com**.
 ## Installation & Running the Project
-https://pig-latin-translation-engine.herokuapp.com/
-* I've deployed the application to Heroku for your convienence. See the link above.
-
-However, if you desire to run the project on your local machine, follow these steps (assuming clean setup, no Ruby or Rails.) In your terminal...
+Follow these steps (assuming clean setup, no Ruby or Rails.) In your terminal...
 
 * 1: Clone the project to your local machine. Install git if neccessary. 
 * 2: Install RVM by following the instructions in this StackOverflow post. https://tinyurl.com/3c8scf7k
