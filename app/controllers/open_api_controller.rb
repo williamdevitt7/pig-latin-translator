@@ -1,0 +1,2 @@
+class OpenApiController < ApplicationController
+end

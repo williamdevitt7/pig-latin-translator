@@ -1,8 +1,17 @@
-class TranslationsController < ApplicationController
+class TranslationsController < OpenApiController
 
+  # GET /translations
   def index
     @translation = Translation.new(language: "pig_latin")
     @all_translations = Translation.pig_latin.ordered.first(15)
+
+    render json: @all_translations
+  end
+
+  # GET /translations/:id
+  def show 
+    @translation = Translation.find(params[:id])
+    render json: @translation
   end
 
   def create
